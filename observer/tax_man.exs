@@ -1,9 +1,9 @@
 defmodule TaxMan do
   use GenEvent
 
-  def handle_event({:changed, employee}, _) do
+  def handle_event({:changed, employee}, state) do
     IO.puts "Send #{employee.name} a new tax bill!"
 
-    {:ok, nil}
+    {:ok, state}
   end
 end
