@@ -5,16 +5,15 @@ defmodule ShapeFactory do
   def create(:rectangle, width: width, height: height), do: {:rectangle, width, height}
   def create(:rectangle, x1: x1, x2: x2, y1: y1, y2: y2), do: {:rectangle, x2-x1, y2-y1}
 
-  def create(:square, size: size), do: {:square, size}
+  def create(:square, size: size), do: {:rectangle, size, size}
 end
 
 defmodule Graphics do
   def draw({:circle, d}),
     do: IO.puts("Drawing circle, diameter: #{d}")
+
   def draw({:rectangle, w, h}),
     do: IO.puts("Drawing rectangle, dimensions: #{w}*#{h}")
-  def draw({:square, size}),
-    do: IO.puts("Drawing square, dimensions: #{size}*#{size}")
 end
 
 factory = ShapeFactory
