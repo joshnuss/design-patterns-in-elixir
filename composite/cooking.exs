@@ -1,7 +1,7 @@
 defmodule Cooking do
-  def ingredient(name, quantity, unit \\ :units),
-    do: {:ingredient, name, quantity, unit}
-
   def part(name, ingredients),
-    do: {:part, name, ingredients}
+    do: {:branch, name, ingredients}
+
+  def ingredient(name, quantity, unit \\ :units),
+    do: {:leaf, name, quantity, unit}
 end
