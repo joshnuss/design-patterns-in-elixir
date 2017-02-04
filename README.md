@@ -17,7 +17,9 @@ Pull requests are very welcome!
 
 ## Caveats
 
-Remember that design patterns are only a guide. Don't impose design patterns. Your code should surface them organically. Always use the terminology of your domain, avoid terms like "Factory", "Strategy", etc.. in your code, it's too ambiguous.
+Remember that design patterns are only a guide. Don't impose design patterns on your systems. They should surface organically.
+
+Always use the terminology of your domain, avoid terms like "Factory", "Strategy", etc.. in your code, it's too ambiguous.
 
 ## License
 
