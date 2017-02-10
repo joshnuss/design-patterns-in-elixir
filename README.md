@@ -1,7 +1,7 @@
 Design Patterns in Elixir
 ------------------------------
 
-This a collection of common design patterns you might be familiar, converted to Elixir.
+This a collection of common design patterns you might be familiar with, converted to Elixir.
 
 Pull requests are very welcome!
 
@@ -18,9 +18,11 @@ Pull requests are very welcome!
 
 ## Caveats
 
-Remember that design patterns are only a guide. Don't impose design patterns on your systems. They should surface organically.
+Remember that design patterns are only a guide.
+Don't impose design patterns on your systems.
+Design should surface organically.
 
-Always use the terminology of your domain, avoid terms like "Factory", "Strategy", etc.. in your code, it's too ambiguous.
+Always use the terminology of your domain. Avoid using terms like "Factory", "Strategy", etc.. in your code, it's too ambiguous.
 
 ## License
 
