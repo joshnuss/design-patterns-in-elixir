@@ -1,4 +1,6 @@
 defmodule HTMLFormatter do
+  @behaviour Formatter
+
   def output_report(context) do
     IO.puts "<html>"
     IO.puts "  <head>"
