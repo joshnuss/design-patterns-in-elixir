@@ -32,7 +32,6 @@ defmodule BankAccount do
       transactions: [{:deposit, money}|state.transactions]
     }
 
-
     {:reply, {:ok, new_state.balance}, new_state}
   end
 
@@ -50,7 +49,7 @@ defmodule BankAccount do
   end
 end
 
-# hide balance: whenever the message :balance is called return {:ok, :hidden}
+# hide balance: whenever the message :balance is sent, return {:ok, :hidden}
 defmodule PrivacyProxy do
   def intercept(account) do
     receive do
@@ -73,7 +72,7 @@ end
 BankAccount.deposit(account, 100) |> IO.inspect
 BankAccount.withdraw(account, 10) |> IO.inspect
 
-# spawn a proxy
+# spawn a proxy to intercept
 proxy = spawn PrivacyProxy, :intercept, [account]
 
 # calls to balance are now intercepted
