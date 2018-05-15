@@ -1,7 +1,12 @@
 defmodule Singleton do
   use GenServer
 
+  # for a singleton specific to this node
   @name :the_singleton_name
+
+  # for a singleton across all nodes
+  #@name {:global, :the_singleton_name}
+
   @initial_value "starting value"
 
   def start_link,
