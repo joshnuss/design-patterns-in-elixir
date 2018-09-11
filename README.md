@@ -11,6 +11,7 @@ Pull requests are very welcome!
 - [Commands](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/commands)
 - [Composite](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/composite)
 - [Factory](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/factory)
+- [Fascade](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/fascade)
 - [Observer](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/observer)
 - [Proxy](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/proxy)
 - [Singleton](https://github.com/joshnuss/design-patterns-in-elixir/tree/master/singleton)
