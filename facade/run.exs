@@ -12,12 +12,12 @@ defmodule MySystem.ComponentB do
   end
 end
 
-# Fascade delegate to underlying components
+# Facade delegate to underlying components
 defmodule MySystem do
   defdelegate a, to: MySystem.ComponentA
   defdelegate b, to: MySystem.ComponentB
 end
 
-# Call fascade
+# Call facade
 MySystem.a()
 MySystem.b()

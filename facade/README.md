@@ -6,5 +6,5 @@ http://www.petecorey.com/blog/2018/09/03/using-facades-to-simplify-elixir-module
 # Run
 
 ```
-elixir fascade/run.exs
+elixir facade/run.exs
 ```
