@@ -1,5 +1,5 @@
 # Run
 
 ```
-elixir comamnds/run.exs
+elixir commands/run.exs
 ```
