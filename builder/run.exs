@@ -1,12 +1,12 @@
 # Import the builder
 import ComputerBuilder
 
-# Building the computer is done in a sequence
+# Building the computer is done in a sequence of immutable steps
 #
-# - Each build step takes a `Computer` as the first parameter
-# - Each build step also returns a `Computer` struct
+# - Each function takes a `Computer` as the first parameter
+# - Each function returns a new `Computer` struct
 #
-# This allows us to chain the steps together using pipes `|>`
+# It allows us to chain the steps together using pipes `|>` and save the last value
 computer =
   base_model()
   |> intel
@@ -16,5 +16,5 @@ computer =
   |> add_dvd
   |> add_hard_disk(256_000_000_000)
 
-# The last value of the pipe is your new computer!
+# Print it out
 IO.inspect(computer, label: "Your brand new computer")

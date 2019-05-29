@@ -8,15 +8,15 @@ defmodule ComputerBuilder do
   def intel(computer),
     do: %{computer | cpu: :intel}
 
-  # Notice we can use pattern matching
+  # We can use pattern matching
   def amd(computer = %Computer{cpu: nil}),
     do: %{computer | cpu: :amd}
 
-  # Notice we can use guards
+  # We can use guards
   def display(computer, type) when type in ~w(lcd hd wxga)a,
     do: %{computer | display: type}
 
-  # We can overwrite the memory value
+  # We can overwrite values
   def set_memory(computer, size),
     do: %{computer | memory: size}
 
@@ -27,8 +27,7 @@ defmodule ComputerBuilder do
   def add_hard_disk(computer, size),
     do: add_disk(computer, size)
 
-  # Actions can be aggregate of other build actions
-  # Here `add_cd` is based on `add_disk`
+  # Actions can rely on other actions. Here `add_cd` is based on `add_disk`
   def add_cd(computer),
     do: add_disk(computer, :cd)
 
