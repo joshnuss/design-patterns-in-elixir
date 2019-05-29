@@ -1,25 +1,34 @@
+# Define a module with a list of build actions
 defmodule ComputerBuilder do
-  def build,
+  # Start with a blank computer
+  def base_model,
     do: %Computer{}
 
+  # Define some methods to configure the CPU
   def intel(computer),
     do: %{computer | cpu: :intel}
 
-  def amd(computer),
+  # Notice we can use pattern matching
+  def amd(computer = %Computer{cpu: nil}),
     do: %{computer | cpu: :amd}
 
+  # Notice we can use guards
   def display(computer, type) when type in ~w(lcd hd wxga)a,
     do: %{computer | display: type}
 
+  # We can overwrite the memory value
   def set_memory(computer, size),
     do: %{computer | memory: size}
 
+  # Or we can append values to arrays, using the `[head|tail]` syntax
   def add_disk(computer, drive),
-    do: %{computer | drives: [drive|computer.drives]}
+    do: %{computer | drives: [drive | computer.drives]}
 
   def add_hard_disk(computer, size),
     do: add_disk(computer, size)
 
+  # Actions can be aggregate of other build actions
+  # Here `add_cd` is based on `add_disk`
   def add_cd(computer),
     do: add_disk(computer, :cd)
 
