@@ -19,4 +19,4 @@ cake =
     ])
   ])
 
-IO.inspect(cake, label: "Your birhday cake")
+IO.inspect(cake, label: "Your birthday cake")
