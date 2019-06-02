@@ -29,16 +29,16 @@ defmodule BankAccount do
   def handle_call({:deposit, money}, _from, state) when money > 0 do
     new_state = %{
       balance: state.balance + money,
-      transactions: [{:deposit, money}|state.transactions]
+      transactions: [{:deposit, money} | state.transactions]
     }
 
     {:reply, {:ok, new_state.balance}, new_state}
   end
 
-  def handle_call({:withdraw, money}, _from, state=%{balance: balance}) when money < balance do
+  def handle_call({:withdraw, money}, _from, state = %{balance: balance}) when money < balance do
     new_state = %{
       balance: state.balance - money,
-      transactions: [{:withdraw, money}|state.transactions]
+      transactions: [{:withdraw, money} | state.transactions]
     }
 
     {:reply, {:ok, new_state.balance}, new_state}
@@ -62,19 +62,20 @@ defmodule PrivacyProxy do
         GenServer.reply(from, result)
     end
 
-    intercept(account) # continue intercepting
+    # continue intercepting
+    intercept(account)
   end
 end
 
-{:ok, account} = BankAccount.start_link
+{:ok, account} = BankAccount.start_link()
 
 # without interceptor
-BankAccount.deposit(account, 100) |> IO.inspect
-BankAccount.withdraw(account, 10) |> IO.inspect
+BankAccount.deposit(account, 100) |> IO.inspect()
+BankAccount.withdraw(account, 10) |> IO.inspect()
 
 # spawn a proxy to intercept
-proxy = spawn PrivacyProxy, :intercept, [account]
+proxy = spawn(PrivacyProxy, :intercept, [account])
 
 # calls to balance are now intercepted
-BankAccount.balance(proxy) |> IO.inspect
-BankAccount.deposit(proxy, 10) |> IO.inspect
+BankAccount.balance(proxy) |> IO.inspect()
+BankAccount.deposit(proxy, 10) |> IO.inspect()

@@ -24,4 +24,3 @@ defmodule Report do
   def change_format(formatter),
     do: GenServer.call(__MODULE__, {:change_format, formatter})
 end
-

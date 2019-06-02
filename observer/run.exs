@@ -1,6 +1,6 @@
 fred = %Employee{name: "Fred Flinstone", title: "Crane Operator", salary: 30000}
 
-{:ok, pid} = GenEvent.start_link
+{:ok, pid} = GenEvent.start_link()
 
 HR.start_link(fred, pid)
 

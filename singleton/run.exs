@@ -5,7 +5,7 @@ defmodule Singleton do
   @name :the_singleton_name
 
   # for a singleton across all nodes
-  #@name {:global, :the_singleton_name}
+  # @name {:global, :the_singleton_name}
 
   @initial_value "starting value"
 
@@ -25,8 +25,8 @@ defmodule Singleton do
     do: {:reply, :ok, value}
 end
 
-Singleton.start_link
+Singleton.start_link()
 
-Singleton.value |> IO.puts
+Singleton.value() |> IO.puts()
 Singleton.update("new value")
-Singleton.value |> IO.puts
+Singleton.value() |> IO.puts()

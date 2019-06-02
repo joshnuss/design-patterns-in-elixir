@@ -26,13 +26,12 @@ defmodule Report do
       def output_body_end, do: nil
       def output_end, do: nil
 
-      defoverridable [output_start: 0,
-                      output_head: 0,
-                      output_body_start: 0,
-                      output_line: 1,
-                      output_body_end: 0,
-                      output_end: 0]
+      defoverridable output_start: 0,
+                     output_head: 0,
+                     output_body_start: 0,
+                     output_line: 1,
+                     output_body_end: 0,
+                     output_end: 0
     end
   end
 end
-
