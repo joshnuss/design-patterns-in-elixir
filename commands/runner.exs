@@ -58,7 +58,7 @@ defmodule Runner do
   # handles the `undo` message
   # pattern matches the `done` list, extracting the first command and the tail
   def handle_call(:undo, _from, state = %{done: [command = {mod, args} | t]}) do
-    # dynamically call `unexecute` on the commmand module
+    # dynamically call `unexecute` on the command module
     apply(mod, :unexecute, List.wrap(args))
 
     # update the `done` stack to the tail
@@ -72,7 +72,7 @@ defmodule Runner do
   # handles the `redo` message
   # pattern matches the `undone` list, extracting the first command and the tail
   def handle_call(:redo, _from, state = %{undone: [command = {mod, args} | t]}) do
-    # dynamically call `execute` on the commmand module
+    # dynamically call `execute` on the command module
     apply(mod, :execute, List.wrap(args))
 
     # update the `undone` stack to the tail

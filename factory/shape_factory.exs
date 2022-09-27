@@ -11,6 +11,6 @@ defmodule ShapeFactory do
   def create(:rectangle, %{width: width, height: height}), do: {:rectangle, width, height}
   def create(:rectangle, %{x1: x1, x2: x2, y1: y1, y2: y2}), do: {:rectangle, x2 - x1, y2 - y1}
 
-  # We create rectangles when asked for a square (mathimatically wrong, but whatevs)
+  # We create rectangles when asked for a square (mathematically wrong, but whatevs)
   def create(:square, %{size: size}), do: {:rectangle, size, size}
 end
